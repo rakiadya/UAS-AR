@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v6.0.0/dist/aframe-extras.min.js"></script>
+    <title>A-Frame</title>
+</head>
+
+<body>
+    <a-scene>
+        <a-box position="0 0 0" rotation="0 45 0" color="#ffaaaa"></a-box>
+        <a-plane position="5 5 0" rotation="-84 77 -78" width="3" height="3" color="#aaaaff"></a-plane>
+        <a-sky color="#ffffee"></a-sky>
+        <a-assets>
+    
+            <a-asset-item id="objfuku" src="magcyan-fukubukuro.glb"></a-asset-item>
+        </a-assets>
+        <a-entity gltf-model="#objfuku" scale="0.2 0.2 0.2" position="0 0 0" shadow="cast: true" animation-mixer></a-entity>
+        <a-light type="point" intensity="0.5" position="-5 0 0"></a-light>
+        <a-light type="point" intensity="0.5" position="5 5 5"></a-light>
+        <a-light type="point" intensity="1" position="0 0 5"></a-light>
+        <a-camera position="0 2 3.7"></a-camera>
+        <a-plane rotation="-90 0 0" height="50" width="50" shadow="receive: true" shadow-material></a-plane>
+    </a-scene>
+</body>
+<script>
+document.querySelector("a-scene").renderer.gammaOutput = true;
+</script>
+
+</html>
